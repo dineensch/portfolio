@@ -18,3 +18,16 @@ header.masthead .bg-circle {
     background-color: rgb(53, 53, 53);
     border-color: rgb(53, 53, 53);
 }
+
+#verticleBar {
+    position: fixed;
+    height: 100%;
+    width: 130px;
+    border: 1px solid red;
+    left: 20;
+    overflow-x: hidden;
+}
+
+.main {
+    margin-left: 130px;
+}

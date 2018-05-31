@@ -1,3 +1,12 @@
+.ss-container:before{
+    position: absolute;
+    width: 100px;
+    background: rgba(17,17,22,0.8);
+	margin-left: 15px;
+    content: '';
+    height: 100%;
+}
+
 .page-heading {
     font-family: 'Rock Salt', cursive;
 }
@@ -23,11 +32,38 @@ header.masthead .bg-circle {
     position: fixed;
     height: 100%;
     width: 130px;
-    border: 1px solid red;
-    left: 20;
+    background-color: black;
+    margin-left: 20px;
     overflow-x: hidden;
 }
 
 .main {
     margin-left: 130px;
 }
+
+#firstBox {
+    font-weight: bold;
+    transform: translate3d(50px, -100px, -200px);
+    transition: all 1.5s ease-in-out;
+    opacity: 0;
+  }
+
+#firstBox.active {
+    background-color: #333;
+    color: #FFF;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+#secondBox {
+    transition: all 1.5s ease-in-out;
+    transform: translate3d(-50px, 100px, 100px);
+    opacity: 0;
+  }
+
+#secondBox.active {
+    background-color: #1581AF;
+    color: #FFF;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }

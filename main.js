@@ -1,11 +1,11 @@
 let isScrolling = false;
  
-    window.addEventListener("scroll", throttleScroll, false);
+    window.addEventListener("scroll", controlScroll, false);
  
-    function throttleScroll(e) {
+    function controlScroll() {
       if (isScrolling == false) {
         window.requestAnimationFrame(function() {
-          scrolling(e);
+          scrolling();
           isScrolling = false;
         });
       }
@@ -14,22 +14,27 @@ let isScrolling = false;
  
     document.addEventListener("DOMContentLoaded", scrolling, false);
  
-    let firstBox = document.querySelector("#firstBox");
-    let secondBox = document.querySelector("#secondBox");
+    let firstPhoto = document.querySelector("#firstPhoto");
+    let secondPhoto = document.querySelector("#secondPhoto");
  
-    function scrolling(e) {
+    
+    function scrolling() {
  
-      if (isPartiallyVisible(firstBox)) {
-        firstBox.classList.add("active");
+      if (isPartiallyVisible(firstPhoto)) {
+        firstPhoto.classList.add("active");
+      } else {
+        firstPhoto.classList.remove("active");
       }
  
-      if (isFullyVisible(secondBox)) {
-        secondBox.classList.add("active");
+      if (isFullyVisible(secondPhoto)) {
+        secondPhoto.classList.add("active");
+      } else {
+        secondPhoto.classList.remove("active");
       }
     }
  
-    function isPartiallyVisible(el) {
-      let elementBoundary = el.getBoundingClientRect();
+    function isPartiallyVisible(e) {
+      let elementBoundary = e.getBoundingClientRect();
  
       let top = elementBoundary.top;
       let bottom = elementBoundary.bottom;
@@ -38,8 +43,8 @@ let isScrolling = false;
       return ((top + height >= 0) && (height + window.innerHeight >= bottom));
     }
  
-    function isFullyVisible(el) {
-      let elementBoundary = el.getBoundingClientRect();
+    function isFullyVisible(e) {
+      let elementBoundary = e.getBoundingClientRect();
  
       let top = elementBoundary.top;
       let bottom = elementBoundary.bottom;

@@ -45,25 +45,36 @@ header.masthead .bg-circle {
 
 /* ANIMATION TRANSITIONS */
 
-#firstPhoto {
-    font-weight: bold;
-    transform: translate3d(50px, -100px, -200px);
-    transition: all 1.5s ease-in-out;
-    opacity: 0;
+.elementAnimate {
+    position: relative;
+    width: 30%;
+    margin: 0% 1.33% 2.66% 1.33%;
+    float: left;
   }
 
-#firstPhoto.active {
+.elementAnimate.active {
     transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 
-#secondPhoto {
-    transition: all 1.5s ease-in-out;
-    transform: translate3d(-50px, 100px, 100px);
+
+.bounceUp {
     opacity: 0;
+    -webkit-transition: all 700ms ease-out;
+    transition: all 700ms ease-out;
+    -webkit-transform: translate3d(0px, 200px, 0px);
+    -ms-transform: translate(0px, 200px);
+    transform: translate3d(0px, 200, 0px);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
-#secondPhoto.active {
-    transform: translate3d(0, 0, 0);
+.bounceUp.active {
     opacity: 1;
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
   }
